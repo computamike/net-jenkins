@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'apcovernight/continuous-integration:latest'
+      image 'mcr.microsoft.com/dotnet/core/sdk:3.1'
       args '''-u root
 -v /var/run/docker.sock:/var/run/docker.sock'''
     }
