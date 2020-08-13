@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'apcovernight/continuous-integration:latest'
-      args '''-u root
--v /var/run/docker.sock:/var/run/docker.sock'''
-    }
-  }
+  agent { label 'DotNetCore'  }
   stages {
     stage('Print a Message') {
       steps {
