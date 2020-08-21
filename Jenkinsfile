@@ -23,6 +23,11 @@ pipeline {
       }
     }
 
+    stage('CodeCoverage') {
+      steps {
+        sh 'dotnet test'
+      }
+    }
  
 
  
