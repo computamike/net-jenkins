@@ -25,7 +25,7 @@ pipeline {
 
     stage('CodeCoverage') {
       steps {
-        sh 'dotnet test'
+        sh 'dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput="./TestResults/"'
       }
     }
  
