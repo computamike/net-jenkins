@@ -13,9 +13,6 @@ pipeline {
 
     stage('DotNetRestore') {
       steps {
-        sh 'hostname'
-        sh 'whoami'
-        sh 'set'
         sh 'dotnet restore'
       }
     }
