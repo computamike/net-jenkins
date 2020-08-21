@@ -38,9 +38,11 @@ dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Coverle
   }
   post {
     always {
+      cobertura coberturaReportFile: 'ExampleAPITest/TestResults/coverage.cobertura.xml'
       sh 'chmod -R 777 .'
       cleanWs()
     }
-
   }
 }
+
+ 
