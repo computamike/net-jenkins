@@ -1,5 +1,7 @@
 pipeline {
-  agent { label 'DotNetCore'  }
+  agent {
+    label 'DotNetCore'
+  }
   stages {
     stage('Print a Message') {
       steps {
@@ -25,13 +27,11 @@ pipeline {
 
     stage('CodeCoverage') {
       steps {
-        sh ' '
-        sh 'dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput="./TestResults/"'
+        sh '''cd ExampleAPITest
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput="./TestResults/"'''
       }
     }
- 
 
- 
   }
   environment {
     DOTNET_CLI_HOME = '/usr/share/dotnet'
@@ -41,5 +41,6 @@ pipeline {
       sh 'chmod -R 777 .'
       cleanWs()
     }
+
   }
 }
