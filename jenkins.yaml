@@ -1,15 +1,14 @@
 jenkins:
-  systemMessage: "This is a local Jenkins instance."
   agentProtocols:
-      - "JNLP4-connect"
-      - "Ping"
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "Job/Read:anonymous"
+      - "Overall/Administer:admin"
+      - "Overall/Read:anonymous"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
   disableRememberMe: false
-  authorizationStrategy:
-    globalMatrix:
-      permissions:
-      - "Overall/Administer:admin"
-      - "Overall/Read:anonymous"
-      - "View/Read:anonymous"
