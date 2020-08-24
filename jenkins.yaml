@@ -7,3 +7,9 @@ jenkins:
     standard:
       excludeClientIPFromCrumb: false
   disableRememberMe: false
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "Overall/Administer:admin"
+      - "Overall/Read:anonymous"
+      - "View/Read:anonymous"
