@@ -1,4 +1,5 @@
 jenkins:
+  systemMessage: "Hello, world!"
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
@@ -8,7 +9,3 @@ jenkins:
       - "Job/Read:anonymous"
       - "Overall/Administer:admin"
       - "Overall/Read:anonymous"
-  crumbIssuer:
-    standard:
-      excludeClientIPFromCrumb: false
-  disableRememberMe: false
