@@ -14,5 +14,6 @@ jenkins:
       permissions:
       - "Job/Read:anonymous"
       - "Overall/Administer:admin"
+      - "Overall/Administer:demoAdmin"
       - "Overall/Read:anonymous"
   crumbIssuer: "standard"
