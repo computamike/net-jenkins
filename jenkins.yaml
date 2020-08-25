@@ -3,6 +3,12 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: demoAdmin
+         password: ${JENKINS_PASS:-passw0rd}
   authorizationStrategy:
     globalMatrix:
       permissions:
