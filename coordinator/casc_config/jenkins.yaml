@@ -1,0 +1,19 @@
+jenkins:
+  systemMessage: " 🎉Welcome to the example set up for the Dev.to article : .Net Test Coverage using Jenkins"
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: ${JENKINS_USER:-admin}
+         password: ${JENKINS_PASS:-admin}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "Job/Read:anonymous"
+      - "Overall/Administer:${JENKINS_USER:-admin}"
+      - "Overall/Read:anonymous"
+  crumbIssuer: "standard"
+ 

@@ -7,6 +7,7 @@ services:
       - '50000:50000'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
+      - './coordinator/casc_config:/var/jenkins_home/casc_configs'
     image: dev/jenkins
     build:
       context: ./coordinator/
@@ -31,12 +32,12 @@ services:
       dockerfile: Dockerfile
       context: ./localtunnel
     restart: on-failure
-    command: --local-host jenkins -h https://serverless.social --port 8080  
+    command: '--local-host jenkins -h https://serverless.social --port 8080'
   ngrok:
     container_name: ngrok
     ports:
       - '4040'
     links:
-      - 'jenkins-coordinator'
+      - jenkins-coordinator
     image: wernight/ngrok
-    command: sh -c "ngrok authtoken ${NGROK_AUTH} && ngrok http jenkins:8080"
+    command: 'sh -c "ngrok authtoken ${NGROK_AUTH} && ngrok http jenkins:8080"'
