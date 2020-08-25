@@ -9,3 +9,4 @@ jenkins:
       - "Job/Read:anonymous"
       - "Overall/Administer:admin"
       - "Overall/Read:anonymous"
+  crumbIssuer: "standard"
