@@ -1,8 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:21.04
 
 # Install Docker CLI
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates software-properties-common
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+#RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 RUN echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce --allow-unauthenticated
 RUN apt-get update && apt-get install -y openjdk-8-jre curl python python-pip git
